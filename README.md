@@ -12,9 +12,9 @@ A meme that captures how I currently feel about my university studies is ![](htt
 
 ## Courses I am taking this semester:
 
-* STATS 220
-* COMPSCI 110
-* COMPSCI 220
-* COMPSCI 230
+1. STATS 220
+2.  COMPSCI 110
+3.  COMPSCI 220
+4.  COMPSCI 230
 
 A video that captures what I think of the semester so far:
