@@ -1,6 +1,6 @@
 # stats220
 
-This is my repo for STATS 220. 
+### This is my repo for STATS 220. 
 
 ## A little about me:
 
@@ -10,11 +10,11 @@ This is my repo for STATS 220.
 
 A meme that captures how I currently feel about my university studies is ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
 
-Courses I am taking this semester:
+## Courses I am taking this semester:
 
-> STATS 220
-> COMPSCI 110
-> COMPSCI 220
-> COMPSCI 230
+* STATS 220
+* COMPSCI 110
+* COMPSCI 220
+* COMPSCI 230
 
 A video that captures what I think of the semester so far:
