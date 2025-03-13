@@ -16,3 +16,5 @@ A meme that captures how I currently feel about my university studies is ![](htt
 4.  COMPSCI 230
 
 [Recipe of the best drink that helps me survive my studies :)](https://youtu.be/jh-nxIk5kBM?si=kC0GSdWc52vhYULQ)
+[An activity to take a break from all the stress :p](https://www.thecolor.com/)
+
