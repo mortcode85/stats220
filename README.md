@@ -15,4 +15,4 @@ A meme that captures how I currently feel about my university studies is ![](htt
 3.  COMPSCI 220
 4.  COMPSCI 230
 
-A video that captures what I think of the semester so far:
+[A recipe of a drink that I consume to help me survive my studies :)](https://youtu.be/jh-nxIk5kBM?si=kC0GSdWc52vhYULQ)
