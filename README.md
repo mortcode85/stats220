@@ -11,6 +11,8 @@
 A meme that captures how I currently feel about my university studies is ![](https://tenor.com/bU7qe.gif)
 
 
+
+
 ## Courses I am taking this semester:
 
 1. STATS 220
