@@ -1,0 +1,122 @@
+---
+title: My dynamic report on taking the Auckland Transport train to University.
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+library(tidyverse)
+```
+
+```{css}
+@import url ("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+body {
+  font-family: "Roboto Mono", monospace;
+  color: #4f4f4f;
+  padding: 25px;
+}
+h2, h3, h4 {
+  color: #2b2b2b;
+}
+
+```
+
+## My dynamic report on taking the Auckland Transport train for University.
+
+In this report, I will analyse data collected from the survey I have created, "Taking the Auckland Transport train for University". The responses have been recorded from approximately two weeks' worth of observations. The goal of my analysis is to understand patterns in a university student's train ride experiences, in terms of the train's arrival time, crowdness, and their journey satisfaction, etc. By exploring the responses received in the survey we can identify areas where improvements can be made by Auckland Transport to make train rides better for everyone.
+
+The data in this report was collected from a survey that asked key questions about an individuals' train ride experience when going to or from University in Auckland.
+
+#### The key variables we are analysing include:
+*train_day* = The day of the week when the train ride took place.
+
+*train_time* = The scheduled arrival time of the train (in military time).
+
+*on_time* = Whether the train arrived on time or not (Yes/No).
+
+*train_arrival* = The time difference (in minutes) the train arrived from its scheduled time. (eg. 0 if on time, negative integer if early, and positive integer if late).
+
+*train_crowd* = Description of how crowded the train was (eg. "Almost empty", "Moderately packed", "Quite busy", and "Very packed").
+
+*ride_rating* = An overall rating of how pleasant the passenger found the train ride on a scale of 1 to 10.
+
+```{r}
+##Obtaining the data frame from the Google form csv link
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSD-Anan8-PK1F8ImNIW2HthAudTvYHxfSklivUc5Rw_JJAixIZuWar6etYi10hTuum-TiGUNMcPV3j/pub?output=csv")
+
+##Creating a new name for the data frame and renaming columns
+latest_data <- logged_data %>%
+  rename(train_day = 2,
+         train_time = 3,
+         on_time = 4,
+         train_arrival = 5,
+         train_crowd = 6,
+         ride_rating = 7)
+
+##Creating a bar chart for the "Did your train arrive on it's scheduled time?" question in the survey
+on_time_plot <- ggplot(latest_data) +
+                  geom_bar(aes(x = on_time, fill = on_time)) +
+                  scale_fill_manual(values = c("No" = "#de9eaa",
+                                              "Yes" = "#73995d")) +
+                  labs(title =(expression(paste(bold("Did your train arrive on it's scheduled time?")))))
+
+
+##Creating a bar chart for the "How packed was the train?" question in the survey
+crowd_plot <- ggplot(latest_data) +
+                 geom_bar(aes(x = train_crowd, fill = train_crowd)) +
+                 scale_fill_manual(values = c("Very packed" = "#ffc29e",
+                                              "Quite busy" = "#ffeea3",
+                                              "Moderately packed" = "#bae6ff",
+                                              "Almost empty" = "#e3c9ff")) +
+                 labs(title =(expression(paste(bold("How packed was the train?")))))
+
+
+##Getting the average train ride rating using results obtained from the survey
+mean_rating <- mean(latest_data$ride_rating) %>% round(1)
+
+##Getting the earliest, latest, and average time difference a train arrived from its scheduled time
+earliest_arr <- min(latest_data$train_arrival)
+
+latest_arr <- max(latest_data$train_arrival)
+
+mean_arrival <- mean(latest_data$train_arrival)
+```
+
+
+### 1. on_time
+
+We begin by analysing the on-time performance of the trains, and see if they are more likely to arrive on time or not. Below is a bar chart showing the count of "Yes" and "No" responses.
+
+```{r}
+on_time_plot
+```
+
+The plot illustrated above shows that the Auckland Transport trains are less likely to arrive on time, and often arrives earlier or later than its scheduled arrival.
+
+### 2. train_arrival
+Now we will look at the variances of the train's arrival, considering how many minutes it arrived earlier or later than its scheduled time.
+
+- The data resulted in (`r earliest_arr`) for the smallest difference in arrival time for the train, hence the earliest a train arrived at the station was 2 minutes before its scheduled time.
+
+- The data resulted in (`r latest_arr`) for the largest difference in arrival time for the train, hence the latest a train arrived at the station was 18 minutes after its scheduled time.
+
+- The data has also shown that the trains are likely to arrive `r mean_arrival` minutes late on average.
+
+### 3. train_crowd
+
+We now consider how crowded the trains were for each observation response. The train_crowd variable categorises the crowd level into four groups: "Almost empty", "Moderately packed", "Quite busy", and "Very packed". Below is a bar chart that shows the frequency of each crowd level.
+
+
+```{r}
+crowd_plot
+```
+
+It is evident from the plot that the trains are more likely to be filled with passengers, rather than being barely occupied.
+
+### 4. ride_rating
+
+Lastly we will analyse the overall ride ratings. This is a significant factor as it reflects passenger satisfaction with their train journey. The ride_rating variable records ratings on a scale of 1-10.
+
+- The mean ride rating given by the passenger is `r mean_rating`, which corresponds to a rating of `r mean_rating`/10, reflecting how pleasant they found their train ride experience. 
