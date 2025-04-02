@@ -27,7 +27,7 @@ h2, h3, h4 {
 
 ## My dynamic report on taking the Auckland Transport train for University.
 
-In this report, I will analyse data collected from the survey I have created, 'Taking the Auckland Transport train for University'. The responses have been recorded from approximately two weeks' worth of observations. The goal of my analysis is to understand patterns in a university student's train ride experiences, in terms of the train's arrival time, crowdness, and their journey satisfaction, etc. By exploring the responses received in the survey we can identify areas where improvements can be made by Auckland Transport to make train rides better for everyone.
+In this report, I will analyse data collected from the survey I have created, "Taking the Auckland Transport train for University". The responses have been recorded from approximately two weeks' worth of observations. The goal of my analysis is to understand patterns in a university student's train ride experiences, in terms of the train's arrival time, crowdness, and their journey satisfaction, etc. By exploring the responses received in the survey we can identify areas where improvements can be made by Auckland Transport to make train rides better for everyone.
 
 The data in this report was collected from a survey that asked key questions about an individuals' train ride experience when going to or from University in Auckland.
 
@@ -38,7 +38,7 @@ The data in this report was collected from a survey that asked key questions abo
 
 *train_time* = The scheduled arrival time of the train (in military time).
 
-*on_time* = Whether the train arrived on time or not (Yes/No).
+*on_time* = Whether the train arrived on time or not ("Yes"/"No").
 
 *train_arrival* = The time difference (in minutes) the train arrived from its scheduled time. (eg. 0 if on time, negative integer if early, and positive integer if late).
 
@@ -126,4 +126,4 @@ Lastly we will analyse the overall ride ratings. This is a significant factor as
 - The mean ride rating given by the passenger is `r mean_rating`, which corresponds to a rating of `r mean_rating`/10, reflecting how pleasant they found their train ride experience.
 
 ### Conclusion
-The analysis evidently shows that Auckland Transport trains are frequently delayed, with an average delay of approximately 6.7 minutes beyond their scheduled arrival time. Additionally, the trains are often overcrowded, which negatively affects passenger satisfaction and overall travel experience. These suggest that Auckland Transport has room for improvement in their train servies, regardless of the day or time. To enhance reliability and ensure passenger safety, it is crucial that the train schedules are consistently adhered to. Increasing the frequency of train arrivals could also prevent accumulating too many passengers in a single train, reducing the risk of any safety hazards. By addressing these issues, Auckland Transport can improve both the efficiency and safety of their train services, resulting in a better experience for passengers. 
+The analysis evidently shows that Auckland Transport trains are frequently delayed, with an average delay of approximately 6.7 minutes beyond their scheduled arrival time. Additionally, the trains are often overcrowded, which could negatively affect passenger satisfaction and overall travel experience. These suggest that Auckland Transport has room for improvement in their train servies, regardless of the day or time. To enhance reliability and ensure passenger safety, it is crucial that the train schedules are consistently adhered to. Increasing the frequency of train arrivals could also prevent accumulating too many passengers in a single train, reducing the risk of any safety hazards. By addressing these issues, Auckland Transport can improve both the efficiency and safety of their train services, resulting in a better experience for passengers. 
